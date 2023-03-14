@@ -1,0 +1,7 @@
+circle
+triangle
+square
+pentagon
+hexagon
+semicircle
+quarter
