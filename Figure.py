@@ -1,4 +1,5 @@
 import random
+import string
 import uuid
 from os import path
 
@@ -50,11 +51,11 @@ class Figure:
 
     def add_letter(self, font_path):
         font = ImageFont.truetype(font_path, int(self.radius * self.text_scale))
-        letter = random.choice(["A", "B", "C"])
+        self.letter = random.choice(string.ascii_letters)
 
         image = Image.fromarray(self.img)
         draw = ImageDraw.Draw(image)
-        draw.text(self.xy - (self.radius * 0.5, self.radius * 0.85) + self.text_offset, letter, font=font,
+        draw.text(self.xy - (self.radius * 0.5, self.radius * 0.85) + self.text_offset, self.letter, font=font,
                   fill=(255, 255, 255),
                   align="center")
 
